@@ -6,6 +6,20 @@
     --netflix-white: #FFFFFF;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--netflix-black);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--netflix-red);
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--netflix-light-gray);
+}
+
 /* --- LOADING SCREEN --- */
 .loader-wrapper {
     position: fixed;
