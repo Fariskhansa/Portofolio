@@ -424,4 +424,21 @@ nav ul li a.active {
     .menu-toggle.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    .about-container {
+        flex-direction: column; /* Mengubah susunan jadi atas-bawah */
+        padding: 24px; /* Mengurangi jarak kosong di pinggir layar */
+        text-align: center; /* Membuat teks rata tengah biar rapi */
+        gap: 24px; /* Jarak antara foto dan teks */
+    }
+
+    .about-image {
+        width: 200px; /* Mengecilkan ukuran foto di HP */
+        height: 200px;
+        margin: 0 auto; /* Memastikan foto tepat di tengah */
+    }
+
+    .section-title {
+        margin: 32px 0 16px 24px; /* Menyesuaikan jarak judul About Me */
+    }
 }
