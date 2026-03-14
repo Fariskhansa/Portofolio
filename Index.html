@@ -10,8 +10,15 @@
     <!-- Header -->
     <header id="header">
       <a href="#" class="logo">PORTOFOLIO</a>
+      
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
       <nav>
-        <ul>
+        <ul id="nav-list">
           <li><a href="#home" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
@@ -20,7 +27,6 @@
         </ul>
       </nav>
     </header>
-
     <!-- Hero Section -->
     <section id="home" class="hero">
       <h1>
@@ -43,21 +49,10 @@
         <div class="about-content">
           <h2>Faris Khansa Fayzi</h2>
           <p>
-            Hello! I'm a passionate full stack developer and UI/UX designer with
-            over 5 years of experience creating innovative digital solutions. I
-            specialize in building responsive, user-friendly websites and
-            applications that combine beautiful design with powerful
-            functionality.
-          </p>
-          <p>
-            My journey in tech began when I Studied Information System degree
-            from Telkom University. Since then, I've worked with startups,
-            agencies, and established companies to deliver high-quality digital
-            products.
-          </p>
-          <p>
-            When I'm not coding, you can find me exploring new design trends,
-            contributing to open-source projects, or playing video games.
+            I am an Information Systems student at Telkom University with a strong dedication to
+            bridging the gap between system functionality and optimal user experience.
+            With a deep interest in computer technology since childhood, I have 
+            developed practical expertise in Web Development and Software Quality Assurance.
           </p>
         </div>
       </div>
@@ -177,5 +172,26 @@
         </div>
       </div>
     </section>
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        const navLinks = document.querySelectorAll('#nav-list li a');
+
+        // Mengaktifkan menu saat tombol hamburger diklik
+        mobileMenu.addEventListener('click', () => {
+          mobileMenu.classList.toggle('is-active');
+          navList.classList.toggle('active');
+        });
+
+        // Otomatis menutup menu saat salah satu link diklik (opsional tapi disarankan)
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-active');
+            navList.classList.remove('active');
+          });
+        });
+      </script>
+    </body>
+    </html>
   </body>
 </html>

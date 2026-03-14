@@ -81,7 +81,6 @@ nav ul li a.active {
 }
 
 .animated-letter {
-    font-size: 100px;
     color: #fff;
     font-family: '';
     text-transform: uppercase;
@@ -90,28 +89,28 @@ nav ul li a.active {
     transition: 1s;
     animation: bounce 0.54s ease infinite alternate;
     position: relative;
-  }
-  
-  .animated-letter:nth-child(1) { animation-delay: 0.2; }
-  .animated-letter:nth-child(2) { animation-delay: 0.3s; }
-  .animated-letter:nth-child(3) { animation-delay: 0.4s; }
-  .animated-letter:nth-child(4) { animation-delay: 0.5s; }
-  .animated-letter:nth-child(5) { animation-delay: 0.6s; }
-  .animated-letter:nth-child(6) { animation-delay: 0.7s; }
-  
-  @keyframes bounce {
-    100% {
-      top: -20px;
-      text-shadow: 0 1px 0 #ccc,
-                   0 2px 0 #ccc,
-                   0 3px 0 #ccc,
-                   0 4px 0 #ccc,
-                   0 5px 0 #ccc,
-                   0 6px 0 #ccc,
-                   0 7px 0 #ccc,
-                   0 8px 0 #ccc;
     }
-  }
+    
+    .animated-letter:nth-child(1) { animation-delay: 0.2; }
+    .animated-letter:nth-child(2) { animation-delay: 0.3s; }
+    .animated-letter:nth-child(3) { animation-delay: 0.4s; }
+    .animated-letter:nth-child(4) { animation-delay: 0.5s; }
+    .animated-letter:nth-child(5) { animation-delay: 0.6s; }
+    .animated-letter:nth-child(6) { animation-delay: 0.7s; }
+    
+    @keyframes bounce {
+        100% {
+        top: -20px;
+        text-shadow: 0 1px 0 #ccc,
+                    0 2px 0 #ccc,
+                    0 3px 0 #ccc,
+                    0 4px 0 #ccc,
+                    0 5px 0 #ccc,
+                    0 6px 0 #ccc,
+                    0 7px 0 #ccc,
+                    0 8px 0 #ccc;
+        }
+    }
 
 .hero h1 {
     font-size: 64px;
@@ -304,31 +303,6 @@ nav ul li a.active {
     font-size: 18px;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 8px;
-    font-size: 16px;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 12px;
-    background-color: var(--netflix-dark-gray);
-    border: 1px solid var(--netflix-light-gray);
-    border-radius: 4px;
-    color: var(--netflix-white);
-    font-size: 16px;
-}
-
-.form-group textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
 #social-media {
     background-color: var(--netflix-dark-gray);
     padding: 60px 0;
@@ -395,126 +369,59 @@ nav ul li a.active {
     width: 100%;
 }
 
-footer {
-    background-color: var(--netflix-black);
-    padding: 32px 48px;
-    text-align: center;
-    margin-top: 0;
-    border-top: 1px solid var(--netflix-dark-gray);
-}
-
-.footer-text {
-    color: var(--netflix-light-gray);
-    font-size: 14px;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 200;
-    justify-content: center;
-    align-items: center;
-    padding: 32px;
-}
-
-.modal-content {
-    background-color: var(--netflix-dark-gray);
-    max-width: 800px;
-    width: 100%;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    max-height: 90vh;
-    overflow-y: auto;
-}
-
-.modal-header {
-    position: relative;
-    height: 400px;
-}
-
-.modal-header img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.modal-header-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 48px 24px 24px;
-    background: linear-gradient(to top, var(--netflix-dark-gray) 0%, transparent 100%);
-}
-
-.modal-header-overlay h2 {
-    font-size: 32px;
-    margin-bottom: 8px;
-}
-
-.modal-body {
-    padding: 24px;
-}
-
-.modal-info {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 24px;
-    color: var(--netflix-light-gray);
-}
-
-.modal-description {
-    margin-bottom: 24px;
-    line-height: 1.8;
-}
-
-.modal-links {
-    display: flex;
-    gap: 16px;
-}
-
-.close-modal {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    color: var(--netflix-white);
-    background: none;
-    border: none;
-    font-size: 32px;
+.menu-toggle {
+    display: none; /* Sembunyikan di desktop */
+    flex-direction: column;
     cursor: pointer;
-    z-index: 10;
+    gap: 5px;
+    z-index: 101; /* Pastikan selalu di atas elemen lain */
 }
 
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--netflix-white);
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+/* Aturan khusus untuk layar HP (di bawah 768px) */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 40px;
+    .menu-toggle {
+        display: flex; /* Tampilkan ikon hamburger di HP */
     }
-    
-    .hero p {
-        font-size: 18px;
-    }
-    
-    .about-container {
-        flex-direction: column;
-    }
-    
-    .about-image {
-        width: 100%;
-        height: 300px;
-    }
-    
+
     nav ul {
-        display: none;
+        position: absolute;
+        top: 100%; /* Muncul tepat di bawah header */
+        right: -100%; /* Sembunyikan di sebelah kanan layar (off-screen) */
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95); /* Background gelap transparan */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 50px;
+        transition: right 0.4s ease-in-out; /* Efek slide */
     }
-    
-    .social-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+    nav ul li {
+        margin: 20px 0; /* Beri jarak antar menu */
+    }
+
+    /* Class tambahan untuk memunculkan menu */
+    nav ul.active {
+        right: 0; 
+    }
+
+    /* Animasi ikon hamburger menjadi tanda silang (X) */
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
