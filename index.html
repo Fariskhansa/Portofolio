@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+    <div class="loader-wrapper" id="loader">
+      <div class="loader-circle"></div>
+    </div>
+
     <!-- Header -->
     <header id="header">
       <a href="#" class="logo">PORTOFOLIO</a>
@@ -173,6 +178,17 @@
       </div>
     </section>
     <script>
+        // Script Loading Screen
+      window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        
+        // Saya kasih delay 1 detik (1000ms) biar animasinya sempat kelihatan keren.
+        // Kalau mau langsung hilang begitu web siap, hapus setTimeout dan biarkan loader.classList.add saja.
+        setTimeout(() => {
+          loader.classList.add('loader-hidden');
+        }, 1000); 
+      });
+
         const mobileMenu = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
         const navLinks = document.querySelectorAll('#nav-list li a');
