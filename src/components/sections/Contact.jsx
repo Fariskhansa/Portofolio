@@ -2,6 +2,7 @@ import React from 'react';
 import SectionTitle from '../ui/SectionTitle';
 import Button from '../ui/Button';
 import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
@@ -12,7 +13,13 @@ const Contact = () => {
             Get In Touch
           </SectionTitle>
           
-          <div className="bg-neo-red p-8 md:p-12 border-8 border-neo-black shadow-[12px_12px_0px_0px_rgba(26,26,26,1)]">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, type: "spring", bounce: 0.4 }}
+            className="bg-neo-red p-8 md:p-12 border-8 border-neo-black shadow-[12px_12px_0px_0px_rgba(26,26,26,1)]"
+          >
             <p className="text-white text-xl md:text-2xl font-bold mb-8 text-center">
               Have a project in mind or just want to say hi? I'm always open to new opportunities!
             </p>
@@ -28,7 +35,7 @@ const Contact = () => {
                 <FaInstagram className="text-4xl" /> Instagram
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

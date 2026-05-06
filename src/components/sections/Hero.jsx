@@ -1,24 +1,67 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 import heroPhoto from '../../assets/foto.jpeg';
 
 const Hero = () => {
+  const [typedText, setTypedText] = useState('');
+  const fullText = 'WEB DEVELOPER.';
+
+  useEffect(() => {
+    let timeout;
+    let isDeleting = false;
+    let currentIndex = 0;
+
+    const type = () => {
+      if (isDeleting) {
+        setTypedText(fullText.substring(0, currentIndex - 1));
+        currentIndex--;
+        
+        if (currentIndex === 0) {
+          isDeleting = false;
+          timeout = setTimeout(type, 500); // Wait before typing again
+        } else {
+          timeout = setTimeout(type, 100); // Deletion speed
+        }
+      } else {
+        setTypedText(fullText.substring(0, currentIndex + 1));
+        currentIndex++;
+        
+        if (currentIndex === fullText.length) {
+          isDeleting = true;
+          timeout = setTimeout(type, 2500); // Pause at full text
+        } else {
+          timeout = setTimeout(type, 150); // Typing speed
+        }
+      }
+    };
+
+    timeout = setTimeout(type, 500);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 pb-16 bg-neo-bg">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Text Content */}
-          <div className="order-2 lg:order-1 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="order-2 lg:order-1 relative z-10"
+          >
             <div className="inline-block border-4 border-neo-black bg-neo-cyan px-4 py-2 font-bold mb-6 shadow-neo -rotate-2">
               HELLO WORLD 👋
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight tracking-tighter uppercase">
-              I'm <span className="text-white text-stroke">Faris</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tighter uppercase">
+              I'm <span className="text-white text-stroke">Faris Khansa Fayzi</span>
               <br />
-              <span className="bg-neo-yellow px-2 border-4 border-neo-black shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] inline-block mt-2">
-                Developer.
+              <span className="bg-neo-yellow px-2 border-4 border-neo-black shadow-[4px_4px_0px_0px_rgba(26,26,26,1)] inline-block mt-4 min-h-[1.2em] min-w-[2ch]">
+                {typedText}<span className="animate-pulse">|</span>
               </span>
             </h1>
 
@@ -34,23 +77,36 @@ const Hero = () => {
                 Contact Me
               </Button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Visual Content */}
-          <div className="order-1 lg:order-2 relative flex justify-center">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="order-1 lg:order-2 relative flex justify-center"
+          >
             {/* Decorative Elements */}
-            <div className="absolute top-0 right-10 w-24 h-24 bg-neo-red rounded-full border-4 border-neo-black shadow-neo animate-bounce" style={{ animationDuration: '3s' }}></div>
-            <div className="absolute bottom-10 left-10 w-16 h-16 bg-neo-blue border-4 border-neo-black shadow-neo -rotate-12"></div>
+            <motion.div 
+              className="absolute top-0 right-10 w-24 h-24 bg-neo-red rounded-full border-4 border-neo-black shadow-neo"
+              animate={{ y: [0, -20, 0], rotate: [0, 10, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div 
+              className="absolute bottom-10 left-10 w-16 h-16 bg-neo-blue border-4 border-neo-black shadow-neo"
+              animate={{ y: [0, 20, 0], rotate: [-12, 12, -12] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            />
 
             {/* Main Image Container */}
             <div className="relative w-full max-w-md aspect-square bg-neo-yellow border-8 border-neo-black shadow-[16px_16px_0px_0px_rgba(26,26,26,1)] overflow-hidden group">
               <img
                 src={heroPhoto}
                 alt="Faris"
-                className="w-full h-full object-cover "
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
               />
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

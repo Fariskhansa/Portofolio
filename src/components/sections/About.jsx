@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionTitle from '../ui/SectionTitle';
+import { motion } from 'framer-motion';
 
 const About = () => {
   return (
@@ -7,7 +8,13 @@ const About = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <SectionTitle align="center">About Me</SectionTitle>
         
-        <div className="max-w-4xl mx-auto mt-12 bg-neo-bg border-4 border-neo-black shadow-neo p-8 md:p-12 relative">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="max-w-4xl mx-auto mt-12 bg-neo-bg border-4 border-neo-black shadow-neo p-8 md:p-12 relative"
+        >
           {/* Decorative Tape */}
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-neo-cyan/50 border-2 border-neo-black -rotate-3 z-10"></div>
           
@@ -22,7 +29,7 @@ const About = () => {
               When I'm not coding, you can find me exploring new design trends, contributing to open-source, or experimenting with the latest web technologies.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
