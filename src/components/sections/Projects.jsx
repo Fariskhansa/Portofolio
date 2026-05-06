@@ -13,22 +13,6 @@ const Projects = () => {
       githubLink: 'https://github.com/Fariskhansa/RedBullFanpage',
       liveLink: 'https://red-bull-fanpage.vercel.app/'
     },
-    {
-      title: 'Task Tracker Dashboard',
-      description: 'A beautiful and responsive task management dashboard using Tailwind CSS and React context API for state management.',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
-      tags: ['React', 'Tailwind', 'Context API'],
-      githubLink: '#',
-      liveLink: '#'
-    },
-    {
-      title: 'Portfolio Website',
-      description: 'A brutalist inspired personal portfolio website (this one!) built with Vite, React, and custom Neobrutalism styling.',
-      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop',
-      tags: ['React', 'Vite', 'Neobrutalism'],
-      githubLink: '#',
-      liveLink: '#'
-    }
   ];
 
   return (
