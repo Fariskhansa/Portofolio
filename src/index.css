@@ -12,6 +12,12 @@
   html {
     scroll-behavior: smooth;
   }
+
+  @media (pointer: fine) {
+    body, a, button, input, textarea {
+      cursor: none !important;
+    }
+  }
 }
 
 @layer components {
