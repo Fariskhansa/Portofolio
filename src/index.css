@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f0f0f0] text-neo-black font-sans selection:bg-neo-yellow selection:text-neo-black overflow-x-hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Neobrutalism Button */
+  .neo-btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border-4 border-neo-black font-bold uppercase tracking-wider transition-all duration-200 shadow-neo hover:-translate-y-1 hover:-translate-x-1 hover:shadow-neo-hover active:translate-y-0 active:translate-x-0 active:shadow-none;
+  }
+
+  /* Neobrutalism Card */
+  .neo-card {
+    @apply border-4 border-neo-black bg-white shadow-neo transition-all duration-200 hover:-translate-y-2 hover:-translate-x-2 hover:shadow-neo-hover;
+  }
+}
