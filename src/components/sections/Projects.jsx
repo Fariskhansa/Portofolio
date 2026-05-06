@@ -1,16 +1,17 @@
 import React from 'react';
 import SectionTitle from '../ui/SectionTitle';
 import ProjectCard from '../ui/ProjectCard';
+import redbullImage from '../../assets/redbull.png';
 
 const Projects = () => {
   const projectsData = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features secure payments and inventory management.',
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop',
-      tags: ['React', 'Node.js', 'MongoDB'],
-      githubLink: '#',
-      liveLink: '#'
+      title: 'RedBull F1 Fanpage',
+      description: 'A fanpage dedicated to the RedBull Racing Formula 1 team. Built with React and modern web technologies.',
+      image: redbullImage,
+      tags: ['HTML', 'CSS', 'JavaScript'],
+      githubLink: 'https://github.com/Fariskhansa/RedBullFanpage',
+      liveLink: 'https://red-bull-fanpage.vercel.app/'
     },
     {
       title: 'Task Tracker Dashboard',
@@ -36,7 +37,7 @@ const Projects = () => {
         <SectionTitle align="left" className="mb-16">
           Selected Works
         </SectionTitle>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {projectsData.map((project, index) => (
             <ProjectCard key={index} {...project} />

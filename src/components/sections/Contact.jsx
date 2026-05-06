@@ -1,6 +1,7 @@
 import React from 'react';
 import SectionTitle from '../ui/SectionTitle';
 import Button from '../ui/Button';
+import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
 
 const Contact = () => {
   return (
@@ -16,41 +17,17 @@ const Contact = () => {
               Have a project in mind or just want to say hi? I'm always open to new opportunities!
             </p>
             
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <label htmlFor="name" className="block text-white font-bold text-lg mb-2">Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  className="w-full px-4 py-3 border-4 border-neo-black focus:outline-none focus:ring-4 focus:ring-neo-yellow text-lg font-medium"
-                  placeholder="John Doe"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-white font-bold text-lg mb-2">Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  className="w-full px-4 py-3 border-4 border-neo-black focus:outline-none focus:ring-4 focus:ring-neo-yellow text-lg font-medium"
-                  placeholder="john@example.com"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-white font-bold text-lg mb-2">Message</label>
-                <textarea 
-                  id="message" 
-                  rows="5" 
-                  className="w-full px-4 py-3 border-4 border-neo-black focus:outline-none focus:ring-4 focus:ring-neo-yellow text-lg font-medium resize-none"
-                  placeholder="Hello..."
-                ></textarea>
-              </div>
-              
-              <Button type="submit" variant="primary" className="w-full text-xl py-4 mt-4">
-                SEND MESSAGE
-              </Button>
-            </form>
+            <div className="flex flex-col gap-6">
+              <a href="https://www.linkedin.com/in/faris-khansa-fayzi-15b921338/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-4 w-full bg-neo-yellow px-6 py-5 border-4 border-neo-black text-neo-black font-black text-2xl uppercase tracking-wider transition-all duration-200 shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[12px_12px_0px_0px_rgba(26,26,26,1)] active:translate-y-0 active:translate-x-0 active:shadow-none">
+                <FaLinkedin className="text-4xl" /> LinkedIn
+              </a>
+              <a href="https://github.com/Fariskhansa" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-4 w-full bg-white px-6 py-5 border-4 border-neo-black text-neo-black font-black text-2xl uppercase tracking-wider transition-all duration-200 shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[12px_12px_0px_0px_rgba(26,26,26,1)] active:translate-y-0 active:translate-x-0 active:shadow-none">
+                <FaGithub className="text-4xl" /> GitHub
+              </a>
+              <a href="https://www.instagram.com/fariskhnsa/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-4 w-full bg-neo-cyan px-6 py-5 border-4 border-neo-black text-neo-black font-black text-2xl uppercase tracking-wider transition-all duration-200 shadow-[8px_8px_0px_0px_rgba(26,26,26,1)] hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[12px_12px_0px_0px_rgba(26,26,26,1)] active:translate-y-0 active:translate-x-0 active:shadow-none">
+                <FaInstagram className="text-4xl" /> Instagram
+              </a>
+            </div>
           </div>
         </div>
       </div>

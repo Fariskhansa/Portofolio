@@ -11,7 +11,7 @@ const About = () => {
           {/* Decorative Tape */}
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-neo-cyan/50 border-2 border-neo-black -rotate-3 z-10"></div>
           
-          <div className="prose prose-lg max-w-none font-medium">
+          <div className="prose prose-lg max-w-none font-medium text-neo-black">
             <p className="text-xl md:text-2xl leading-relaxed mb-6">
               I am a passionate <strong className="bg-neo-yellow px-1">Frontend Developer</strong> with a strong focus on creating unique and engaging user experiences. I believe that the web doesn't have to be boring.
             </p>
