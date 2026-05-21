@@ -2,6 +2,7 @@ import React from 'react';
 import SectionTitle from '../ui/SectionTitle';
 import ProjectCard from '../ui/ProjectCard';
 import redbullImage from '../../assets/redbull.png';
+import lwaimage from '../../assets/lwa.png';
 import { motion } from 'framer-motion';
 
 const containerVariants = {
@@ -26,6 +27,15 @@ const Projects = () => {
       tags: ['HTML', 'CSS', 'JavaScript'],
       githubLink: 'https://github.com/Fariskhansa/RedBullFanpage',
       liveLink: 'https://red-bull-fanpage.vercel.app/'
+    },
+
+    {
+      title: 'Learn With AI',
+      description: 'A Website for teacher and student learn how to use AI for studying and teaching.',
+      image: lwaimage,
+      tags: ['React', 'Tailwind', 'Vite'],
+      githubLink: 'https://github.com/Fariskhansa/Project-Pancasila',
+      liveLink: 'https://learnwithai-orcin.vercel.app/'
     },
   ];
 
