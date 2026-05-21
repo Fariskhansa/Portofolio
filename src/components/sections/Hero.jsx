@@ -5,7 +5,7 @@ import heroPhoto from '../../assets/foto.jpeg';
 
 const Hero = () => {
   const [typedText, setTypedText] = useState('');
-  const fullText = 'Frontend Design Enthusiast.';
+  const fullText = 'Frontend Developer.';
 
   useEffect(() => {
     let timeout;
