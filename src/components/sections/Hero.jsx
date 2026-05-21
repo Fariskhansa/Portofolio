@@ -5,7 +5,7 @@ import heroPhoto from '../../assets/foto.jpeg';
 
 const Hero = () => {
   const [typedText, setTypedText] = useState('');
-  const fullText = 'WEB DEVELOPER.';
+  const fullText = 'Frontend Design Enthusiast.';
 
   useEffect(() => {
     let timeout;
@@ -16,7 +16,7 @@ const Hero = () => {
       if (isDeleting) {
         setTypedText(fullText.substring(0, currentIndex - 1));
         currentIndex--;
-        
+
         if (currentIndex === 0) {
           isDeleting = false;
           timeout = setTimeout(type, 500); // Wait before typing again
@@ -26,7 +26,7 @@ const Hero = () => {
       } else {
         setTypedText(fullText.substring(0, currentIndex + 1));
         currentIndex++;
-        
+
         if (currentIndex === fullText.length) {
           isDeleting = true;
           timeout = setTimeout(type, 2500); // Pause at full text
@@ -47,7 +47,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Text Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -80,19 +80,19 @@ const Hero = () => {
           </motion.div>
 
           {/* Visual Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             className="order-1 lg:order-2 relative flex justify-center"
           >
             {/* Decorative Elements */}
-            <motion.div 
+            <motion.div
               className="absolute top-0 right-10 w-24 h-24 bg-neo-red rounded-full border-4 border-neo-black shadow-neo"
               animate={{ y: [0, -20, 0], rotate: [0, 10, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             />
-            <motion.div 
+            <motion.div
               className="absolute bottom-10 left-10 w-16 h-16 bg-neo-blue border-4 border-neo-black shadow-neo"
               animate={{ y: [0, 20, 0], rotate: [-12, 12, -12] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
